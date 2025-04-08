@@ -1,5 +1,4 @@
 "use client";
-// @flow strict
 import { isValidEmail } from "@/utils/check-email";
 import axios from "axios";
 import { useState } from "react";
@@ -29,17 +28,11 @@ function ContactForm() {
       return;
     } else if (error.email) {
       return;
-    } else {
-      setError({ ...error, required: false });
-    };
+    }
 
     try {
       setIsLoading(true);
-      const res = await axios.post(
-        `${process.env.NEXT_PUBLIC_APP_URL}/api/contact`,
-        userInput
-      );
-
+      const res = await axios.post('/api/contact', userInput);
       toast.success("Message sent successfully!");
       setUserInput({
         name: "",
@@ -47,10 +40,10 @@ function ContactForm() {
         message: "",
       });
     } catch (error) {
-      toast.error(error?.response?.data?.message);
+      toast.error("Failed to send message. Please try again.");
     } finally {
       setIsLoading(false);
-    };
+    }
   };
 
   return (

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "framework": "nextjs",
+  "env": {
+    "NEXT_PUBLIC_APP_URL": "https://portofolio-907rcl166-ramachandra-pydi-18s-projects.vercel.app",
+    "EMAIL_ADDRESS": "",
+    "GMAIL_PASSKEY": "",
+    "TELEGRAM_BOT_TOKEN": "",
+    "TELEGRAM_CHAT_ID": ""
+  }
+}
